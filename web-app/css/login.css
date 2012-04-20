@@ -1,0 +1,56 @@
+/* 
+    Document   : login
+    Created on : Mar 21, 2012, 4:37:26 PM
+    Author     : brianpedalsteel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+#login {
+  background-color: #eee;
+  border: .2em solid #fff;
+  margin: 2em 2em 1em;
+  padding: 1em;
+  width: 12em;
+  float: right;
+  -moz-box-shadow: 0px 0px 1.25em #ccc;
+  -webkit-box-shadow: 0px 0px 1.25em #ccc;
+  box-shadow: 0px 0px 1.25em #ccc;
+  -moz-border-radius: 0.6em;
+  -webkit-border-radius: 0.6em;
+  border-radius: 0.6em;
+}
+
+.ie6 #login {
+  display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
+}
+
+#login p {
+  font-style:bold;
+  font-size: 0.9em;
+  list-style-type: none;
+  margin-bottom: 0.6em;
+  padding: 0;
+}
+
+#login ul {
+  font-style: bold;
+  font-size: 0.9em;
+  list-style-type: none;
+  margin-bottom: 0.6em;
+  padding: 0;
+}
+
+#login h1 {
+  text-transform: uppercase;
+  text-decoration:underline;
+  font-family: "Impact";
+  color: #8A2BE2;
+  float: center;
+  font-style: bold;
+  font-size: 1.1em;
+  margin: 0 0 0.3em;
+}
+
+
