@@ -17,12 +17,16 @@ class UserController {
         
         if (params) {
             
-            def user = new User(userId: params.userId,
-                                        firstName: params.firstName, 
-                                        lastName: params.lastName,
-                                        email: params.email, 
-                                        phone: params.phone
-                                       )
+            def user = new User(
+            username: params.username,
+            firstName: params.firstName, 
+            lastName: params.lastName,
+            password: params.password,
+            enabled: true,
+            dateCreated: new Date(),
+            email: params.email,
+            phone: params.phone
+            )
                                      
             if (user.validate()) {
                 user.save()
@@ -39,19 +43,16 @@ class UserController {
                 ////////////////////
                 def userRole = SecRole.findByAuthority('ROLE_USER') ?: new SecRole(authority: 'ROLE_USER').save(failOnError: true)
 
-                def newUser = new SecUser(
-                    username: params.userId,
-                    password: params.password,
-                    enabled: true).save()
+               
                 
                 
-                if (!newUser.authorities.contains(userRole)) {
-                    SecUserSecRole.create newUser, userRole
+                if (!user.authorities.contains(userRole)) {
+                    SecUserSecRole.create user, userRole
                 }
                                 
                 /////////////////////
                 
-                redirect (action: authenticate, params: params) 
+                redirect (controller: 'login', action: 'index' ) 
             }else{
                 flash.message = "Error Registering User"
                 [ user: user ] 

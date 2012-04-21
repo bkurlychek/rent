@@ -19,9 +19,9 @@
                 margin-left: 23em;">
             <dl>
                 <dt>User Id</dt>
-                <dd><g:textField name="userId" value="${user?.userId}"/>
-                <g:hasErrors bean="${user}" field="userId">
-                        <g:eachError bean="${user}" field="userId">
+                <dd><g:textField name="username" value="${user?.username}"/>
+                <g:hasErrors bean="${user}" field="username">
+                        <g:eachError bean="${user}" field="username">
                             <p style="color: red;"><g:message error="${it}"/></p>
                         </g:eachError>
                     </g:hasErrors>

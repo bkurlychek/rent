@@ -3,16 +3,18 @@
 	<meta name='layout' content='main'/>
 	<title><g:message code="springSecurity.login.title"/></title>
 	<style type='text/css' media='screen'>
-	#login {
-		margin: 15px 0px;
-		padding: 0px;
+	
+	#login1 {
+		margin-top: 2em;
+		margin-bottom:2em;
+		margin-left: 19.5em;
 		text-align: center;
+		float: left;
 	}
 
-	#login .inner {
+	#login1 .inner {
 		width: 340px;
 		padding-bottom: 6px;
-		margin: 60px auto;
 		text-align: left;
 		border: 1px solid #aab;
 		background-color: #f0f0fa;
@@ -22,7 +24,7 @@
 		box-shadow: 2px 2px 2px #eee;
 	}
 
-	#login .inner .fheader {
+	#login1 .inner .fheader {
 		padding: 18px 26px 14px 26px;
 		background-color: #f7f7ff;
 		margin: 0px 0 14px 0;
@@ -31,7 +33,7 @@
 		font-weight: bold;
 	}
 
-	#login .inner .cssform p {
+	#login1 .inner .cssform p {
 		clear: left;
 		margin: 0;
 		padding: 4px 0 3px 0;
@@ -40,11 +42,11 @@
 		height: 1%;
 	}
 
-	#login .inner .cssform input[type='text'] {
+	#login1 .inner .cssform input[type='text'] {
 		width: 120px;
 	}
 
-	#login .inner .cssform label {
+	#login1 .inner .cssform label {
 		font-weight: bold;
 		float: left;
 		text-align: right;
@@ -54,38 +56,38 @@
 		padding-right: 10px;
 	}
 
-	#login #remember_me_holder {
+	#login1 #remember_me_holder {
 		padding-left: 120px;
 	}
 
-	#login #submit {
+	#login1 #submit {
 		margin-left: 15px;
 	}
 
-	#login #remember_me_holder label {
+	#login1 #remember_me_holder label {
 		float: none;
 		margin-left: 0;
 		text-align: left;
 		width: 200px
 	}
 
-	#login .inner .login_message {
+	#login1 .inner .login_message {
 		padding: 6px 25px 20px 25px;
 		color: #c33;
 	}
 
-	#login .inner .text_ {
+	#login1 .inner .text_ {
 		width: 120px;
 	}
 
-	#login .inner .chk {
+	#login1 .inner .chk {
 		height: 12px;
 	}
 	</style>
 </head>
 
 <body>
-<div id='login'>
+<div id='login1'>
 	<div class='inner'>
 		<div class='fheader'><g:message code="springSecurity.login.header"/></div>
 

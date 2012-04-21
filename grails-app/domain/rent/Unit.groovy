@@ -16,7 +16,7 @@ String unitNo
         status(inList: ["Available","Rented"])
     }
     
-    static belongsTo = [property: Property]
+    static belongsTo = [asset: Property]
     static hasMany = [tenants: Tenant]
     
     String toString(){
