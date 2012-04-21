@@ -49,7 +49,7 @@ class UserController {
                 if (!user.authorities.contains(userRole)) {
                     SecUserSecRole.create user, userRole
                 }
-                                
+                              
                 /////////////////////
                 
                 redirect (controller: 'login', action: 'index' ) 
@@ -65,26 +65,4 @@ class UserController {
     
     def aboutus = {}
     
-    def login = {}
-  
-    def authenticate = {
-        def user = User.findByUserId(params.userId)
-        if(user){
-            def  props = Property.getAll()
-                           
-            session.user = user           
-            flash.message = "Hello ${user.firstName}!"
-            redirect(controller:"property",action:"listprop", params: [id:session.user.userId])
-              
-        }else{
-            flash.message = "Sorry, ${params.userId}. Please try again."
-            redirect(uri:"/")
-        }
-    }
-  
-    def logout = {
-        flash.message = "Goodbye ${session.user.firstName}"
-        session.user = null
-        redirect(uri: "/")      
-    }  
 }

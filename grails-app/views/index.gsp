@@ -160,7 +160,7 @@ margin-top: 0;
   
     
 <ul id="menu">
-<li>
+<li >
 <g:remoteLink controller ="siteinfo" action="ajaxRandom" update="displayProp">
 Next Property
 </g:remoteLink>

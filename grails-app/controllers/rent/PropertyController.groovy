@@ -2,7 +2,8 @@ package rent
 import grails.plugins.springsecurity.Secured
 
 class PropertyController {
-
+    def springSecurityService
+    
     def scaffold = true
     
     def index={ 
@@ -10,7 +11,7 @@ class PropertyController {
 	
    
     def listprop = {
-        def user = User.findByUserId(params.id)
-        [ user:user, assetAmt: user.asset.size() ]
+        def user = User.get(springSecurityService.principal.id)
+        [ landlord:user, assetAmt: user.asset.size() ]
     }
 }

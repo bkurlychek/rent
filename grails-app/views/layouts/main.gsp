@@ -28,10 +28,9 @@
 		<sec:ifLoggedIn>
 			<label
 				style="font-size: .9em; font-style: bold; font-family: tahoma; color: white; margin-bottom: .5em; margin-left: 25em;">
-				You are logged in as <b><sec:username></sec:username></b>
+				You are logged in as <b><sec:username></sec:username> </b>
 			</label>
-		</sec:ifLoggedIn>
-		<sec:ifLoggedIn>
+		
 			<span class="menuButton"><g:link controller="logout"
 					style="font-size: .9em; font-style: bold; font-family: tahoma;
 			color: white; margin-bottom: .5em">Logout</g:link></span>
@@ -40,17 +39,47 @@
 			<span class="menuButton"><g:link controller="login"
 					style="font-size: .9em; font-style: bold; font-family: tahoma;
 			color: white; margin-bottom: .5em; margin-left: 23em;">Login</g:link></span>
-		</sec:ifNotLoggedIn>
-		<sec:ifNotLoggedIn>
+		
 			<span class="menuButton" style="font-size: .9em; font-style: bold; font-family: tahoma;
 			color: white; margin-bottom: .5em">New to HappyLandlord?<g:link controller="user" action="register" 
                         style="font-size: .9em; font-style: bold; font-family: tahoma;
 			color: white;" > Sign up here!</g:link></span>
 		</sec:ifNotLoggedIn>
-	</div>  <div id="login">
-    
-    
-  </div>
+	</div>  
+        <div id="login">
+    <sec:ifAllGranted roles="ROLE_USER">
+		
+			<p><b>
+				Welcome
+				<sec:username></sec:username>			
+				</b></p>
+			<p>
+				<g:link controller="property" action="listprop"
+					style="font-size: .8em; font-style: bold; font-family: tahoma">View
+					Your Property List</g:link>
+			</p>
+
+			<p>
+				<g:link controller="property" action="list"
+					style="font-size: .9em; font-style: bold; font-family: tahoma">Add a Property       
+        </g:link>
+
+			</p>
+			<p>
+				<g:link controller="unit" action="list"
+					style="font-size: .9em; font-style: bold; font-family: tahoma">View My Units          
+        </g:link>
+			</p>
+			<p>
+				<g:link controller="tenant" action="list"
+					style="font-size: .9em; font-style: bold; font-family: tahoma">View My Tenants</g:link>
+			</p>
+		
+	</sec:ifAllGranted>
+          <sec:ifAllGranted roles="ROLE_ADMIN">
+            <p>test</p>
+          </sec:ifAllGranted>
+        </div>
 
 
 <g:layoutBody/>
