@@ -7,7 +7,8 @@ class User extends SecUser{
     String email
     Date dateCreated
     String phone   
-      
+    
+    
     static constraints = {
         
         firstName( blank: false, size: 1..20)
@@ -24,4 +25,5 @@ class User extends SecUser{
     String toString(){
         "${firstName} ${lastName}"
     }
+    
 }

@@ -6,7 +6,6 @@ class SiteinfoController {
     def contactus = {}    
     def privacy = {}  
     
-    def propertyService
     
     def home = {
         def randomProp = propertyService.getRandomProp()
