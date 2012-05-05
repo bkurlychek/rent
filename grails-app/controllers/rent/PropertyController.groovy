@@ -8,10 +8,9 @@ class PropertyController {
     def springSecurityService
 	
     def currentUser() {
-       def user = User.get(springSecurityService.principal.id)
-       
-        
+       def user = User.get(springSecurityService.principal.id)       
     } 
+	
     def index() {
         redirect(action: "listprop", params: params)
     }

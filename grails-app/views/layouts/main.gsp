@@ -3,22 +3,31 @@
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><g:layoutTitle default="Grails"/></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
-    <link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'login.css')}" type="text/css">
-  <g:javascript library="jquery" plugin="jquery" />
-  <r:require module="jquery" />	
-  <g:layoutHead/>
-  <r:layoutResources />
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title><g:layoutTitle default="Grails" /></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon"
+	href="${resource(dir: 'images', file: 'favicon.ico')}"
+	type="image/x-icon">
+<link rel="apple-touch-icon"
+	href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
+<link rel="apple-touch-icon" sizes="114x114"
+	href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}"
+	type="text/css">
+<link rel="stylesheet"
+	href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'login.css')}"
+	type="text/css">
+<g:javascript library="jquery" plugin="jquery" />
+<r:require module="jquery" />
+<g:layoutHead />
+<r:layoutResources />
 </head>
 <body>
 	<div id="grailsLogo" role="banner">
@@ -30,7 +39,7 @@
 				style="font-size: .9em; font-style: bold; font-family: tahoma; color: white; margin-bottom: .5em; margin-left: 25em;">
 				You are logged in as <b><sec:username></sec:username> </b>
 			</label>
-		
+
 			<span class="menuButton"><g:link controller="logout"
 					style="font-size: .9em; font-style: bold; font-family: tahoma;
 			color: white; margin-bottom: .5em">Logout</g:link></span>
@@ -39,20 +48,28 @@
 			<span class="menuButton"><g:link controller="login"
 					style="font-size: .9em; font-style: bold; font-family: tahoma;
 			color: white; margin-bottom: .5em; margin-left: 23em;">Login</g:link></span>
-		
-			<span class="menuButton" style="font-size: .9em; font-style: bold; font-family: tahoma;
-			color: white; margin-bottom: .5em">New to HappyLandlord?<g:link controller="user" action="register" 
-                        style="font-size: .9em; font-style: bold; font-family: tahoma;
-			color: white;" > Sign up here!</g:link></span>
+
+			<span class="menuButton"
+				style="font-size: .9em; font-style: bold; font-family: tahoma; color: white; margin-bottom: .5em">New
+				to HappyLandlord?<g:link controller="user" action="register"
+					style="font-size: .9em; font-style: bold; font-family: tahoma;
+			color: white;"> Sign up here!</g:link>
+			</span>
 		</sec:ifNotLoggedIn>
-	</div>  
-        <div id="login">
-    <sec:ifAllGranted roles="ROLE_USER">
-		
-			<p><b>
-				Welcome
-				<sec:username></sec:username>			
-				</b></p>
+	</div>
+	<div id="login">
+		<sec:ifNotLoggedIn>
+			<sec:noAccess>
+				<b style="font-size: .75em;">Sign up or login above to make the
+					most of HappyLandlord!</b>
+			</sec:noAccess>
+		</sec:ifNotLoggedIn>
+		<sec:ifAllGranted roles="ROLE_USER">
+
+			<p>
+				<b> Welcome <sec:username></sec:username>
+				</b>
+			</p>
 			<p>
 				<g:link controller="property" action="listprop"
 					style="font-size: .8em; font-style: bold; font-family: tahoma">View
@@ -74,20 +91,26 @@
 				<g:link controller="tenant" action="list"
 					style="font-size: .9em; font-style: bold; font-family: tahoma">View My Tenants</g:link>
 			</p>
-		
-	</sec:ifAllGranted>
-          <sec:ifAllGranted roles="ROLE_ADMIN">
-            <p>test</p>
-          </sec:ifAllGranted>
-        </div>
+			
+			<p>
+				<g:link controller="tenantMessaging" action="plist"
+					style="font-size: .8em; font-style: bold; font-family: tahoma">Send a Message to My Tenants</g:link>
+			</p>
+
+		</sec:ifAllGranted>
+
+		<sec:ifAllGranted roles="ROLE_ADMIN">
+			<p>test</p>
+		</sec:ifAllGranted>
+	</div>
 
 
-<g:layoutBody/>
-<div class="footer" role="contentinfo"
-     style="background-color: #007ca2; color: #99FFCC">
-  <p style="text-align: center;">
-  <g:link controller="siteinfo" action="contactus"
-          style="
+	<g:layoutBody />
+	<div class="footer" role="contentinfo"
+		style="background-color: #007ca2; color: #99FFCC">
+		<p style="text-align: center;">
+			<g:link controller="siteInfo" action="contactus"
+				style="
 
           text-decoration:underline;
           font-style: bold;
@@ -97,9 +120,9 @@
   </g:link>
 
 
-  &nbsp | &nbsp
-  <g:link controller="siteinfo" action="aboutus"
-          style="
+			&nbsp | &nbsp
+			<g:link controller="siteInfo" action="aboutus"
+				style="
 
           text-decoration:underline;
           font-style: bold;
@@ -111,9 +134,9 @@
 
 
   </g:link>
-  &nbsp | &nbsp
-  <g:link controller="siteinfo" action="privacy"
-          style="
+			&nbsp | &nbsp
+			<g:link controller="siteInfo" action="privacy"
+				style="
 
           text-decoration:underline;
           font-style: bold;
@@ -124,19 +147,19 @@
     Privacy Policy
 
   </g:link>
-</p>
+		</p>
 
-</div>
-<div id="spinner" class="spinner" style="display: none;">
-  <g:message code="spinner.alt" default="Loading&hellip;" />
-</div>
-<g:javascript library="application" />
-<r:layoutResources />
-<div id="copyrights">
+	</div>
+	<div id="spinner" class="spinner" style="display: none;">
+		<g:message code="spinner.alt" default="Loading&hellip;" />
+	</div>
+	<g:javascript library="application" />
+	<r:layoutResources />
+	<div id="copyrights">
 
-  <p>Copyright © 2012 Happy Landlord LLC</p>
+		<p>Copyright © 2012 Happy Landlord LLC</p>
 
-</div>
+	</div>
 
 </body>
 </html>

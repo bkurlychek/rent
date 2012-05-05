@@ -77,22 +77,7 @@
   color: black;
   font-size: 1.7em;
 }         
-#conLinks {
-  margin-top: 1em;
-  background-color: #eee;
-  border: .2em solid #fff;
-font-family: tahoma;
-  padding: 1em;
-  width: 20em;
-  -moz-box-shadow: 0px 0px 1.25em #ccc;
-  -webkit-box-shadow: 0px 0px 1.25em #ccc;
-  box-shadow: 0px 0px 1.25em #ccc;
-  -moz-border-radius: 0.6em;
-  -webkit-border-radius: 0.6em;
-  border-radius: 0.6em;
 
-
-}
 h2 {
   margin-top: 1em;
   margin-bottom: 0.3em;
@@ -160,14 +145,14 @@ margin-top: 0;
   
     
 <ul id="menu">
-<li >
-<g:remoteLink controller ="siteinfo" action="ajaxRandom" update="displayProp">
-Next Property
+
+<g:remoteLink controller ="siteInfo" action="ajaxRandom" update="displayProp">
+<br><br>
+<p><b style = "font-size: 1em; color: #0099FF;margin-left: 1em;">View a featured property</b></p>
 </g:remoteLink>
-</li>
+
 </ul>
-    <div id="displayProp">
-                      
+    <div id="displayProp" style = "font-size: 1em; margin-left: 1em;">   
     </div>  
     </div>
    

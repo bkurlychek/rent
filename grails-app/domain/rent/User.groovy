@@ -14,7 +14,6 @@ class User extends SecUser{
         firstName( blank: false, size: 1..20)
         lastName( blank:false,)
         email(email:true, blank: false)
-        
         phone(blank:false,matches:/^\([1-9]\d{2}\)\s?\d{3}\-\d{4}$/)
         dateCreated()
         

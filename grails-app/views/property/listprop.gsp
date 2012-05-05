@@ -9,7 +9,7 @@
   
   
   <g:if test ="${assetAmt == 0}">
-    <h1>${landlord.firstName}: You currently have ${assetAmt} properties. Would you like to 
+    <h1 style = "margin-left: 1.5em;">${landlord.firstName}: You currently have ${assetAmt} properties. Would you like to 
               <g:link controller="property" action="create">      
       add one
                       

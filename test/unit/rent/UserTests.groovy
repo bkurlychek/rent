@@ -1,17 +1,26 @@
 package rent
 
-
-
 import grails.test.mixin.*
 import org.junit.*
 
-/**
- * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
- */
-@TestFor(User)
-class UserTests {
 
-    void testSomething() {
-       fail "Implement me"
+class UserTests {
+void testConstraints() {
+        def will = new User(username: "william")
+        mockForConstraintsTests(User, [ will ]) 
+        def testLL = new User() 
+        assertFalse testLL.validate() 
+        assertEquals "nullable",
+            testLL.errors["username"] 
+        assertEquals "nullable",
+            testLL.errors["password"]
+      
+        testLL = new User(username: "william", password: "william") 
+        assertFalse testLL.validate()
+        
+        assertEquals "unique", testLL.errors["username"] 
+               
+        testLL = new User(username: 'angelaloo', firstName: 'angela', lastName:'doxsey',email:'angela.doxsey@yahoo.com', password:'heyman',phone:'(207) 730-4455')
+        assertTrue testLL.validate()
     }
 }

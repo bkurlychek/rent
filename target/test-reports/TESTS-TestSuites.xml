@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="Angela-PC" id="0" name="PropertyRestControllerUnitTests" package="rent" tests="1" time="2.317" timestamp="2012-04-30T02:11:22">
+      <properties />
+
+      <testcase classname="rent.PropertyRestControllerUnitTests" name="testList" time="2.295" />
+
+      <system-out><![CDATA[--Output from testList--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testList--
+]]></system-err>
+
+  </testsuite>
+</testsuites>

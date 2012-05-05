@@ -11,8 +11,7 @@ class Tenant {
     // tenant last address info
     String prevAddress
     String prevLandlord
-    String prevLandlordPhone
-    
+    String prevLandlordPhone   
     String comments
     Date dateCreated
         

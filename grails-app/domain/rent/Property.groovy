@@ -1,8 +1,6 @@
 package rent
 
 class Property {
-
-   
     
     String address
     String city

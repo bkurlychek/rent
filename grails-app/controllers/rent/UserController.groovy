@@ -37,10 +37,7 @@ class UserController {
                     
                 }
                 ////////////////////
-                def userRole = SecRole.findByAuthority('ROLE_USER') ?: new SecRole(authority: 'ROLE_USER').save(failOnError: true)
-
-               
-                
+                def userRole = SecRole.findByAuthority('ROLE_USER') ?: new SecRole(authority: 'ROLE_USER').save(failOnError: true)                
                 
                 if (!user.authorities.contains(userRole)) {
                     SecUserSecRole.create user, userRole
